@@ -1,0 +1,2201 @@
+/* === Base Styles === */
+
+* {  
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background-color: #fff; 
+    color: #fff;
+    width: 100%;
+}
+
+
+/* ========== BASE STYLES ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0e1117;
+  height: 90px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+  width: 50%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #00ffae33;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.log-in {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #3cc85e;
+}
+
+.sign-up {
+  border: 1px solid;
+  color: #fff;
+  border-image: linear-gradient(to right, #00ffae, #00c2ff) 1;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* the start of the hero section here */
+
+/* Hero Section */
+ .hero {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    z-index: auto;
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  /* Background image overlay */
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/test1/image/head-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+  }
+
+  .hero-text, .calc-card {
+    opacity: 0;
+    transform: translateX(0); /* Reset position */
+  }
+
+  
+  /* Hero content layout */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+  }
+  
+  /* Hero text */
+  .hero-text.animate-left  {
+    max-width: 600px;
+    text-align: center;
+     /* Animate hero-text from left */
+    animation: slideInLeft 2s ease-out forwards;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f1f1f1;
+    text-align: left;
+  }
+  
+  .hero-text h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #d1cbcb;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .hero-text p {
+    font-size: 1rem;
+    color: #d1cbcb;
+    text-align: left;
+    font-weight: 900;
+    margin-bottom: 3rem;
+  }
+
+  .hero-text a {
+    text-decoration: none;
+    padding: 1rem;
+    margin-top: 30px;
+    border-radius: 15px;
+    background-color:  #006400;
+    color: #fff;
+    border: 3px solid #fff;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-text a:hover {
+    color:  #006400;
+    background-color: #fff;
+  }
+  
+  /* Calculator Card */
+  .calc-card.animate-right {
+    background-color: #1a1d21;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 400px;
+    height: 350px;
+    transform:    rotate(5deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+    /* Animate calc-card from right */
+    animation: slideInRight 2s ease-out forwards;
+  }
+
+
+   /* keyframe for slide left and right */
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .calc-card h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    margin-left: 1rem;
+  }
+  
+  /* Duration buttons */
+  .duration-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .duration-btn {
+    flex: 1;
+    margin: 0 0.3rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .duration-btn.active,
+  .duration-btn:hover {
+    background: linear-gradient(45deg, #00ff95, #00b3ff);
+    color: #000;
+    font-weight: bold;
+  }
+  
+  /* Input */
+  #hashrateInput {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    background-color: #292c31;
+    color: #fff;
+  }
+  
+  /* Results table */
+  .row span{
+    margin-bottom: 1rem;
+  }
+  .results-table .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.3rem;
+  }
+
+
+
+
+
+  /* the start of the real-time trading section down here */
+
+  /* General styling */
+.real-time-trading {
+  padding: 60px 5%;
+  background-color: #0e1a1a;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 5px solid #fff;
+}
+
+.trading-header {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.trading-header h1 {
+  color: #00ffae;
+  font-size: 2.8rem;
+}
+
+.trading-header p {
+  font-size: 1.3rem;
+  color: #ccc;
+  font-weight: 600;
+}
+
+/* Live Ticker */
+.live-ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 40px;
+
+}
+
+.ticker-list {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  will-change: transform;
+}
+
+.ticker-list li {
+  display: inline-block;
+  color: #00c2ff;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+
+/* Crypto Grid */
+.trading-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.crypto-card {
+  background-color: #1a2e2e;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+/* "More" card styles */
+.more-card {
+  background-color: #1a2e2e;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.crypto-card, .more-card {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #333;
+}
+
+.more-card .crypto-header h3 {
+  font-size: 1.5rem;
+}
+
+.more-card p {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+.crypto-card:hover {
+  transform: translateY(-5px);
+}
+
+.crypto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.crypto-header h3 {
+  font-size: 1.3rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: #00ffae;
+  font-weight: bold;
+}
+
+.positive {
+  color: #00ffae;
+}
+
+.negative {
+  color: #ff4d4d;
+}
+
+.trade-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #00c2ff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.trade-btn:hover {
+  background: #008bb5;
+}
+  
+/* === Responsive Styles === */   
+  @media (min-width:   1025px) and (max-width: 1499px) {
+
+    /* navbar section responsive styling */
+  .hamburger {
+    display: none;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    margin-left: auto;
+    width: 70%;
+    padding: 0;
+  }
+
+  .nav-links a {
+    padding: 2px;
+    font-size: 1rem;
+  }
+
+  .auth-buttons {
+    margin-left: auto;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+
+  /* the start of the hero section here */
+
+  .hero {
+    min-height: 100vh;
+  }
+  
+  
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-text a {
+    margin-top: 50px;
+  }
+
+  /* the start of the hero section down here */
+
+  .calc-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .duration-btn {
+    font-size: 1rem;
+  }
+
+  .row {
+    font-size: 1.1rem;
+  }
+
+   /* the start of the real-time trading section down here */
+
+  .trading-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .trading-header p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .crypto-card {
+    padding: 20px;
+  }
+}
+
+
+
+@media (min-width: 780px) and (max-width: 1024px) { 
+    .hamburger { 
+        display: flex; 
+        margin-right: 20px;
+    }
+
+    .hamburger span {
+      height: 5px;
+      width: 30px;
+    }
+
+    .navbar {
+      height: 70px;
+    }
+
+    .nav-container { 
+        position: fixed; 
+        top: -90vh; 
+        height: 35vh;
+        left: 0;
+        width: 100%; 
+        background-color: #0e1117; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: flex-start; 
+        transition: top 0.6s ease-in-out;
+        z-index: 1000; 
+    }
+
+    .nav-container.active { 
+        top: 5vh; 
+    }
+
+    .nav-links { 
+        flex-direction: column; 
+        gap: 0.5rem; 
+        align-items: left;
+        margin-left: 30px;
+        margin-bottom: -40px;
+        margin-top: 10px;
+    } 
+
+    .auth-buttons {
+        display: flex;
+        width: 90%;
+        margin-left: 50px;
+    }
+
+    .log-in { 
+        background-color: #212529;
+        border: 1px solid #00ffae33;
+        width: 42%;
+    }
+
+    .sign-up {
+        width: 42%;
+    }
+
+    .nav-links a {
+        text-align: left;
+        border-radius: 20px;
+        font-size: 1.2rem;
+    }
+
+
+
+
+
+    /* the start of the hero section here */
+
+    .hero {
+        flex-direction: column;
+        min-height:   90vh;
+      }
+
+
+      .hero-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        max-width: 70%;
+        margin-bottom: -150px;
+      }
+
+      .hero-text {
+        max-width: 500px;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        text-align: center;
+        font-size: 2.5rem
+      }
+
+      .hero-text h2 {
+        text-align: center;
+        margin-top: 20px;
+        font-size:   2rem;
+      }
+
+      .hero-text p {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.5rem;
+        line-height: 40px;
+      }
+
+      .hero-text a {
+        padding: 1rem;
+        border-radius: 10px;
+        font-size: 1.5rem;
+      }
+    
+      .calc-card {
+        margin-top: 3rem;
+        transform: rotate(0deg);
+        width: 100%;
+        min-width: 550px;
+        margin-bottom: 5rem;
+      }
+
+      .calc-card h3 {
+        font-size: 1rem;
+      }
+    
+      .duration-btn {
+        font-size: 0.8rem;
+      }
+    
+      .row {
+        font-size: 0.8rem;
+      }
+
+
+
+
+
+
+      /* the start of the real-time trading section down here */
+
+      .trading-header h1 {
+        font-size: 2rem;
+        margin-top: -20px;
+        margin-bottom: 20px;
+      }
+
+      .trading-header p {
+        font-size: 1rem;
+      }
+    
+      .crypto-header h3 {
+        font-size: 1rem;
+      }
+
+      .more-card .crypto-header h3 {
+        font-size: 1rem;
+      }
+  
+
+      .crypto-card p {
+        font-size: 0.8rem;
+      }
+    
+      .price {
+        font-size: 1rem;
+      }
+    
+      .trade-btn {
+        font-size: 0.7rem;
+        padding: 8px 16px;
+      }
+
+
+      .trading-data {
+        grid-template-columns: repeat(2, 1fr);
+      }
+}
+
+
+@media (max-width: 1024px) and (max-height: 700px) {
+   /* Short tablets/landscape phones  */
+   .hamburger { 
+    display: flex; 
+    margin-right: 20px;
+}
+
+.hamburger span {
+  height: 5px;
+  width: 30px;
+}
+
+.navbar {
+  height: 70px;
+}
+
+.nav-container { 
+    position: fixed; 
+    top: -90vh; 
+    height: 70vh;
+    left: 0;
+    width: 100%; 
+    background-color: #0e1117; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    transition: top 0.6s ease-in-out;
+    z-index: 1000; 
+}
+
+.nav-container.active { 
+    top: 11vh; 
+}
+
+.nav-links { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    align-items: left;
+    margin-left: 30px;
+    margin-bottom: -40px;
+    margin-top: 10px;
+} 
+
+.auth-buttons {
+    display: flex;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.log-in { 
+    background-color: #212529;
+    border: 1px solid #00ffae33;
+    width: 42%;
+}
+
+.sign-up {
+    width: 42%;
+}
+
+.nav-links a {
+    text-align: left;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+
+
+
+
+/* the start of the hero section here */
+
+.hero {
+    flex-direction: column;
+    min-height: 170vh;
+  }
+
+
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    max-width: 70%;
+    margin-bottom: -150px;
+  }
+
+  .hero-text {
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+    font-size: 2rem
+  }
+
+  .hero-text h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size:  1.5rem;
+  }
+
+  .hero-text p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 30px;
+  }
+
+  .hero-text a {
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  .calc-card {
+    margin-top: 3rem;
+    transform: rotate(0deg);
+    width: 100%;
+    min-width: 550px;
+    margin-bottom: 5rem;
+  }
+
+  .calc-card h3 {
+    font-size: 1rem;
+  }
+
+  .duration-btn {
+    font-size: 0.8rem;
+  }
+
+  .row {
+    font-size: 0.8rem;
+  }
+
+
+
+
+
+
+  /* the start of the real-time trading section down here */
+
+  .trading-header h1 {
+    font-size: 2rem;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .trading-header p {
+    font-size: 1rem;
+  }
+
+  .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+  .more-card .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+
+  .crypto-card p {
+    font-size: 0.8rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .trade-btn {
+    font-size: 0.7rem;
+    padding: 8px 16px;
+  }
+
+
+  .trading-data {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 779px) { 
+  .hamburger { 
+      display: flex; 
+      margin-right: 20px;
+  }
+
+  .hamburger span {
+    width: 30px;
+    height: 3px;
+  }
+
+  .navbar {
+    height: 70px;
+  }
+
+  .nav-container { 
+      position: fixed; 
+      top: -90vh; 
+      height: 40vh;
+      left: 0;
+      width: 100%; 
+      background-color: #0e1117; 
+      flex-direction: column; 
+      justify-content: flex-start; 
+      align-items: flex-start; 
+      transition: top 0.6s ease-in-out;
+      z-index: 1000; 
+  }
+
+  .nav-container.active { 
+      top: 6vh; 
+  }
+
+  .nav-links { 
+      flex-direction: column; 
+      gap: 0.5rem; 
+      align-items: left;
+      margin-left: 30px;
+      margin-bottom: -40px;
+      margin-top: 9px;
+  } 
+
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .logo a {
+    margin-left: 5px;
+  }
+
+  .auth-buttons {
+      display: flex;
+      width: 90%;
+      margin-left: 50px;
+  }
+
+  .log-in { 
+      background-color: #212529;
+      border: 1px solid #00ffae33;
+      width: 42%;
+  }
+
+  .sign-up {
+      width: 42%;
+  }
+
+  .nav-links a {
+      text-align: left;
+      border-radius: 20px;
+      font-size: 1rem;
+  }
+
+
+
+
+
+  /* the start of the hero section here */
+
+  .hero {
+      flex-direction: column;
+      min-height: 90vh;
+    }
+
+
+    .hero-content {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+      margin-bottom: -150px;
+    }
+
+    .hero-text {
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .hero-text h2 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.4rem;
+    }
+
+    .hero-text p {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.3rem;
+    }
+
+    .hero-text a {
+      padding: 0.6rem;
+      border-radius: 10px;
+    }
+  
+    .calc-card {
+      margin-top: 3rem;
+      transform: rotate(0deg);
+      height: 30vh;
+      margin-bottom: 5rem;
+      padding: 1rem;
+      width: 100%;
+    }
+
+    .calc-card h3 {
+      font-size: 1rem;
+    }
+  
+    .duration-btn {
+      font-size: 0.8rem;
+    }
+  
+    .row {
+      font-size: 0.8rem;
+    }
+
+
+
+
+
+
+    /* the start of the real-time trading section down here */
+
+    .trading-header h1 {
+      font-size: 1.5rem;
+      margin-top: -20px;
+      margin-bottom: 20px;
+    }
+
+    .trading-header p {
+      font-size: 0.8rem;
+    }
+  
+    .crypto-header h3 {
+      font-size: 1rem;
+    }
+
+    .more-card .crypto-header h3 {
+      font-size: 1rem;
+    }
+
+
+    .crypto-card p {
+      font-size: 0.8rem;
+    }
+  
+    .price {
+      font-size: 1rem;
+    }
+  
+    .trade-btn {
+      font-size: 0.7rem;
+      padding: 8px 16px;
+    }
+
+
+    .trading-data {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 540px) and (max-height: 800px) {
+  .hamburger { 
+    display: flex; 
+    margin-right: 20px;
+}
+
+.navbar {
+  height: 70px;
+}
+
+.nav-container { 
+    position: fixed; 
+    top: -90vh; 
+    height: 50vh;
+    left: 0;
+    width: 100%; 
+    background-color: #0e1117; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    transition: top 0.6s ease-in-out;
+    z-index: 1000; 
+}
+
+.nav-container.active { 
+    top: 9vh; 
+}
+
+.nav-links { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    align-items: left;
+    margin-left: 30px;
+    margin-bottom: -40px;
+} 
+
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.logo a {
+  margin-left: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.log-in { 
+    background-color: #212529;
+    border: 1px solid #00ffae33;
+    width: 42%;
+}
+
+.sign-up {
+    width: 42%;
+}
+
+.nav-links a {
+    text-align: left;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+
+
+
+
+/* the start of the hero section here */
+
+.hero {
+    flex-direction: column;
+    min-height: 140vh;
+  }
+
+
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin-bottom: -170px;
+  }
+
+  .hero-text {
+    max-width: 1000px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .hero-text h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.3rem;
+  }
+
+  .hero-text p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 30px;
+  }
+
+  .hero-text a {
+    padding: 0.3rem;
+    border-radius: 10px;
+  }
+
+  .calc-card {
+    margin-top: 3rem;
+    transform: rotate(0deg);
+    width: 100%;
+    height: 30vh;
+    padding: 1rem;
+    margin-bottom: 5rem;
+  }
+
+  .calc-card h3 {
+    font-size: 1rem;
+  }
+
+  .duration-btn {
+    font-size: 0.8rem;
+  }
+
+  .row {
+    font-size: 0.8rem;
+  }
+
+
+
+
+
+
+  /* the start of the real-time trading section down here */
+
+  .trading-header h1 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .trading-header p {
+    font-size: 0.8rem;
+  }
+
+  .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+  .more-card .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+
+  .crypto-card p {
+    font-size: 0.8rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .trade-btn {
+    font-size: 0.7rem;
+    padding: 8px 16px;
+  }
+
+
+  .trading-data {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 430px) {  
+  .hamburger { 
+    display: flex; 
+    margin-right: 20px;
+}
+
+.navbar {
+  height: 70px;
+}
+
+.nav-container { 
+    position: fixed; 
+    top: -90vh; 
+    height: 45vh;
+    left: 0;
+    width: 100%; 
+    background-color: #0e1117; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    transition: top 0.6s ease-in-out;
+    z-index: 1000; 
+}
+
+.nav-container.active { 
+    top: 7vh; 
+}
+
+.nav-links { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    align-items: left;
+    margin-left: 30px;
+    margin-bottom: -40px;
+} 
+
+
+.logo {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.logo a {
+  margin-left: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.log-in { 
+    background-color: #212529;
+    border: 1px solid #00ffae33;
+    width: 42%;
+}
+
+.sign-up {
+    width: 42%;
+}
+
+.nav-links a {
+    text-align: left;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+/* the start of the hero section here */
+
+.hero {
+    flex-direction: column;
+    min-height: 110vh;
+  }
+
+
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    margin-bottom:   -100px;
+  }
+
+  .hero-text {
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+    font-size: 1.3rem;
+    min-width: 200px;
+  }
+
+  .hero-text h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  .hero-text p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .hero-text a {
+    padding: 0.3rem;
+    border-radius: 10px;
+  }
+
+  .calc-card {
+    margin-top: 3rem;
+    transform: rotate(0deg);
+    width: 100%;
+    height: 30vh;
+    max-width: 300px;
+    margin-bottom: 5rem;
+  }
+
+  .calc-card h3 {
+    font-size: 1rem;
+  }
+
+  .duration-btn {
+    font-size: 0.8rem;
+  }
+
+  .row {
+    font-size: 0.8rem;
+  }
+
+
+
+
+
+
+  /* the start of the real-time trading section down here */
+
+  .trading-header h1 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .trading-header p {
+    font-size: 1rem;
+  }
+
+  .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+  .more-card .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+
+  .crypto-card p {
+    font-size: 0.8rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .trade-btn {
+    font-size: 0.7rem;
+    padding: 8px 16px;
+  }
+
+
+  .trading-data {
+    grid-template-columns: repeat(1, 1fr);
+  }
+} 
+
+
+
+@media (max-width: 414px) {  
+    .hamburger { 
+      display: flex; 
+      margin-right: 20px;
+  }
+  
+  .navbar {
+    height: 70px;
+  }
+  
+  .nav-container { 
+      position: fixed; 
+      top: -90vh; 
+      height: 45vh;
+      left: 0;
+      width: 100%; 
+      background-color: #0e1117; 
+      flex-direction: column; 
+      justify-content: flex-start; 
+      align-items: flex-start; 
+      transition: top 0.6s ease-in-out;
+      z-index: 1000; 
+  }
+  
+  .nav-container.active { 
+      top: 7vh; 
+  }
+  
+  .nav-links { 
+      flex-direction: column; 
+      gap: 0.5rem; 
+      align-items: left;
+      margin-left: 30px;
+      margin-bottom: -40px;
+  } 
+  
+  
+  .logo {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  
+  .logo a {
+    margin-left: 5px;
+  }
+  
+  .auth-buttons {
+      display: flex;
+      width: 90%;
+      margin-left: 50px;
+  }
+  
+  .log-in { 
+      background-color: #212529;
+      border: 1px solid #00ffae33;
+      width: 42%;
+  }
+  
+  .sign-up {
+      width: 42%;
+  }
+  
+  .nav-links a {
+      text-align: left;
+      border-radius: 20px;
+      font-size: 0.9rem;
+  }
+  
+  
+  
+  
+  
+  /* the start of the hero section here */
+  
+  .hero {
+      flex-direction: column;
+      min-height: 120vh;
+    }
+  
+  
+    .hero-content {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+      height: auto;
+      margin-bottom:   -100px;
+    }
+  
+    .hero-text {
+      max-width: 200px;
+      text-align: center;
+    }
+  
+    .hero-text h1 {
+      text-align: center;
+      font-size: 1.3rem;
+      min-width: 200px;
+    }
+  
+    .hero-text h2 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+  
+    .hero-text p {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1rem;
+    }
+  
+    .hero-text a {
+      padding: 0.3rem;
+      border-radius: 10px;
+    }
+  
+    .calc-card {
+      margin-top: 3rem;
+      transform: rotate(0deg);
+      width: 100%;
+      height: 30vh;
+      max-width: 300px;
+      margin-bottom: 5rem;
+    }
+  
+    .calc-card h3 {
+      font-size: 1rem;
+    }
+  
+    .duration-btn {
+      font-size: 0.8rem;
+    }
+  
+    .row {
+      font-size: 0.8rem;
+    }
+  
+  
+  
+  
+  
+  
+    /* the start of the real-time trading section down here */
+  
+    .trading-header h1 {
+      font-size: 1.5rem;
+      margin-top: -20px;
+      margin-bottom: 20px;
+    }
+  
+    .trading-header p {
+      font-size: 1rem;
+    }
+  
+    .crypto-header h3 {
+      font-size: 1rem;
+    }
+  
+    .more-card .crypto-header h3 {
+      font-size: 1rem;
+    }
+  
+  
+    .crypto-card p {
+      font-size: 0.8rem;
+    }
+  
+    .price {
+      font-size: 1rem;
+    }
+  
+    .trade-btn {
+      font-size: 0.7rem;
+      padding: 8px 16px;
+    }
+  
+  
+    .trading-data {
+      grid-template-columns: repeat(1, 1fr);
+    }
+} 
+
+
+
+@media (max-width: 375px) {  
+  .hamburger { 
+    display: flex; 
+    margin-right: 20px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+}
+
+.navbar {
+  height: 70px;
+}
+
+.nav-container { 
+    position: fixed; 
+    top: -90vh; 
+    height: 57vh;
+    left: 0;
+    width: 100%; 
+    background-color: #0e1117; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    transition: top 0.6s ease-in-out;
+    z-index: 1000; 
+}
+
+.nav-container.active { 
+    top: 7vh; 
+}
+
+.nav-links { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    align-items: left;
+    margin-left: 30px;
+    margin-bottom: -40px;
+    margin-top: 10px;
+} 
+
+
+.logo {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.logo a {
+  margin-left: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.log-in { 
+    background-color: #212529;
+    border: 1px solid #00ffae33;
+    width: 42%;
+}
+
+.sign-up {
+    width: 42%;
+}
+
+.nav-links a {
+    text-align: left;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+/* the start of the hero section here */
+
+.hero {
+    flex-direction: column;
+    min-height: 150vh;
+  }
+
+
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    margin-bottom:   -100px;
+  }
+
+  .hero-text {
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+    font-size: 1.2rem;
+    min-width: 200px;
+  }
+
+  .hero-text h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+
+  .hero-text p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+
+  .hero-text a {
+    padding: 0.3rem;
+    border-radius: 10px;
+  }
+
+  .calc-card {
+    margin-top: 3rem;
+    transform: rotate(0deg);
+    width: 100%;
+    height: 30vh;
+    min-width: 20px;
+    margin-bottom: 5rem;
+  }
+
+  .calc-card h3 {
+    font-size: 1rem;
+  }
+
+  .duration-btn {
+    font-size: 0.8rem;
+  }
+
+  .row {
+    font-size: 0.8rem;
+  }
+
+
+
+
+
+
+  /* the start of the real-time trading section down here */
+
+  .trading-header h1 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .trading-header p {
+    font-size: 1rem;
+  }
+
+  .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+  .more-card .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+
+  .crypto-card p {
+    font-size: 0.8rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .trade-btn {
+    font-size: 0.7rem;
+    padding: 8px 16px;
+  }
+
+
+  .trading-data {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+@media (max-width: 360px) {  
+  .hamburger { 
+    display: flex; 
+    margin-right: 20px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+}
+
+.navbar {
+  height: 70px;
+}
+
+.nav-container { 
+    position: fixed; 
+    top: -90vh; 
+    height: 57vh;
+    left: 0;
+    width: 100%; 
+    background-color: #0e1117; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    transition: top 0.6s ease-in-out;
+    z-index: 1000; 
+}
+
+.nav-container.active { 
+    top: 7vh; 
+}
+
+.nav-links { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    align-items: left;
+    margin-left: 30px;
+    margin-bottom: -40px;
+    margin-top: 10px;
+} 
+
+
+.logo {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.logo a {
+  margin-left: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.log-in { 
+    background-color: #212529;
+    border: 1px solid #00ffae33;
+    width: 42%;
+}
+
+.sign-up {
+    width: 42%;
+}
+
+.nav-links a {
+    text-align: left;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+/* the start of the hero section here */
+
+.hero {
+    flex-direction: column;
+    min-height: 135vh;
+  }
+
+
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    margin-bottom:   -100px;
+  }
+
+  .hero-text {
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+    font-size: 1.3rem;
+    min-width: 300px;
+  }
+
+  .hero-text h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+
+  .hero-text p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .hero-text a {
+    padding: 0.3rem;
+    border-radius: 10px;
+  }
+
+  .calc-card {
+    margin-top: 3rem;
+    transform: rotate(0deg);
+    width: 100%;
+    height: 30vh;
+    max-width: 300px;
+    margin-bottom: 5rem;
+  }
+
+  .calc-card h3 {
+    font-size: 1rem;
+  }
+
+  .duration-btn {
+    font-size: 0.8rem;
+  }
+
+  .row {
+    font-size: 0.8rem;
+  }
+
+
+
+
+
+
+  /* the start of the real-time trading section down here */
+
+  .trading-header h1 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .trading-header p {
+    font-size: 1rem;
+  }
+
+  .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+  .more-card .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+
+  .crypto-card p {
+    font-size: 0.8rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .trade-btn {
+    font-size: 0.7rem;
+    padding: 8px 16px;
+  }
+
+
+  .trading-data {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+@media (max-width: 344px) {
+  .hamburger { 
+    display: flex; 
+    margin-right: 20px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+}
+
+.navbar {
+  height: 70px;
+}
+
+.nav-container { 
+    position: fixed; 
+    top: -90vh; 
+    height: 45vh;
+    left: 0;
+    width: 100%; 
+    background-color: #0e1117; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    transition: top 0.6s ease-in-out;
+    z-index: 1000; 
+}
+
+.nav-container.active { 
+    top: 7vh; 
+}
+
+.nav-links { 
+    flex-direction: column; 
+    gap: 0.5rem; 
+    align-items: left;
+    margin-left: 30px;
+    margin-bottom: -40px;
+    margin-top: 10px;
+} 
+
+
+.logo {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.logo a {
+  margin-left: 5px;
+}
+
+.auth-buttons {
+    display: flex;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.log-in { 
+    background-color: #212529;
+    border: 1px solid #00ffae33;
+    width: 42%;
+}
+
+.sign-up {
+    width: 42%;
+}
+
+.nav-links a {
+    text-align: left;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+/* the start of the hero section here */
+
+.hero {
+    flex-direction: column;
+    min-height: 110vh;
+  }
+
+
+  .hero-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    margin-bottom:   -100px;
+  }
+
+  .hero-text {
+    min-width: 200px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+    font-size: 1.3rem;
+    min-width: 300px;
+  }
+
+  .hero-text h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+
+  .hero-text p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .hero-text a {
+    padding: 0.3rem;
+    border-radius: 10px;
+  }
+
+  .calc-card {
+    margin-top: 3rem;
+    transform: rotate(0deg);
+    width: 100%;
+    height: 30vh;
+    max-width: 300px;
+    margin-bottom: 5rem;
+  }
+
+  .calc-card h3 {
+    font-size: 1rem;
+  }
+
+  .duration-btn {
+    font-size: 0.8rem;
+  }
+
+  .row {
+    font-size: 0.8rem;
+  }
+
+
+
+
+
+
+  /* the start of the real-time trading section down here */
+
+  .trading-header h1 {
+    font-size: 1.5rem;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .trading-header p {
+    font-size: 1rem;
+  }
+
+  .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+  .more-card .crypto-header h3 {
+    font-size: 1rem;
+  }
+
+
+  .crypto-card p {
+    font-size: 0.8rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .trade-btn {
+    font-size: 0.7rem;
+    padding: 8px 16px;
+  }
+
+
+  .trading-data {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

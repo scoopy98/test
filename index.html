@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bit coin mining</title>
+    <link rel="stylesheet" href="/test1/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"">    
+</head>
+    <body>
+        <main class="main-container">
+            <header class="navbar">
+              <div class="logo">
+                <img src="" alt="">
+                <a href="#">Company Name</a>
+              </div>
+            
+              <!-- Hamburger Icon -->
+              <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            
+              <!-- Navigation Container (Links + Auth) -->
+              <div class="nav-container" id="navContainer">
+                <nav class="nav-links">
+                  <a href="#">Home</a>
+                  <a href="#">Trade</a>
+                  <a href="#">Markets</a>
+                  <a href="#">Mining Pool</a>
+                  <a href="#">About</a>
+                  <a href="support">Support</a>
+                </nav>
+            
+                <div class="auth-buttons">
+                  <button class="btn log-in">LOG IN</button>
+                  <button class="btn sign-up">SIGN UP</button>
+                </div>
+              </div>
+            </header>
+          
+          
+            <section class="hero">
+              <!-- Background image overlay -->
+              <div class="hero-bg"></div>
+            
+              <!-- Hero content wrapper -->
+              <div class="hero-content">
+                <!-- Left-side calculator card -->
+                <div class="calc-card" id="calcCard">
+                  <h3>Calculate your income</h3>
+                  
+                  <!-- Duration buttons -->
+                  <div class="duration-buttons">
+                    <button class="duration-btn active" data-period="day">Day</button>
+                    <button class="duration-btn" data-period="week">Week</button>
+                    <button class="duration-btn" data-period="month">Month</button>
+                  </div>
+            
+                  <!-- Input field -->
+                  <input 
+                    type="number" 
+                    id="hashrateInput" 
+                    placeholder="Enter amount" 
+                    min="0"
+                  />
+            
+                  <!-- Output table -->
+                  <div class="results-table">
+                    <div class="row">
+                      <span>Estimated BTC:</span>
+                      <span id="btc-Result">0.0000000 BTC</span>
+                    </div>
+                    <div class="row">
+                      <span>Estimated USD:</span>
+                      <span id="usd-Result">$0.00</span>
+                    </div>
+                  </div>
+                </div>
+            
+                <!-- Right-side text content -->
+                <div class="hero-text">
+                  <h1>Trade Smarter with Bitcoin & Altcoins</h1>
+                  <h2>Your Gateway to Secure & Profitable Crypto Investments</h2>
+                  <p>
+                    Join thousands of investors using our platform to track mining profits and trade leading cryptocurrencies like Bitcoin, Ethereum, and Litecoin in real-time.
+                  </p>
+                  <a href="signup.ejs">Get Started Now</a>
+                </div>
+              </div>
+            </section>
+            
+            
+            <!-- the start of the real-time trading section down here -->
+            
+            
+            <section class="real-time-trading">
+              <div class="trading-header">
+                <h1>Crypto Market</h1>
+                <p>Track live prices and market movement of your favorite cryptocurrencies.</p>
+              </div>
+            
+              <!-- Live Ticker -->
+              <div class="live-ticker">
+                <ul class="ticker-list">
+                  <li>BTC: $67,204.38</li>
+                  <li>ETH: $3,528.91</li>
+                  <li>USDT: $1.00</li>
+                  <li>BNB: $608.55</li>
+                  <li>SOL: $156.20</li>
+                  <li>XRP: $0.56</li>
+                  <li>DOGE: $0.16</li>
+                  <li>TON: $6.38</li>
+                  <li>ADA: $0.43</li>
+                  <li>AVAX: $37.50</li>
+                  <li>SHIB: $0.000025</li>
+                  <li>DOT: $7.10</li>
+                  <li>TRX: $0.13</li>
+                  <li>MATIC: $0.72</li>
+                  <li>LINK: $13.80</li>
+                  <li>WBTC: $67,180.45</li>
+                  <li>BCH: $489.12</li>
+                  <li>LTC: $88.27</li>
+                  <li>ICP: $13.45</li>
+                  <li>UNI: $7.54</li>
+                  <li>ETC: $29.22</li>
+                  <li>FIL: $6.20</li>
+                  <li>XLM: $0.12</li>
+                  <li>APT: $9.45</li>
+                  <li>HBAR: $0.09</li>
+                  <li>CRO: $0.11</li>
+                  <li>AR: $28.77</li>
+                  <li>NEAR: $7.08</li>
+                  <li>RNDR: $9.12</li>
+                  <li>INJ: $23.87</li>
+                  <li>PEPE: $0.000013</li>
+                  <li>FLOKI: $0.00020</li>
+                  <li>STX: $1.95</li>
+                  <li>KAS: $0.12</li>
+                  <li>WIF: $2.88</li>
+                  <li>TIA: $10.55</li>
+                  <li>GRT: $0.32</li>
+                  <li>FTM: $0.78</li>
+                  <li>MKR: $2,905.15</li>
+                  <li>IMX: $2.25</li>
+                  <li>RON: $3.18</li>
+                  <li>RUNE: $5.28</li>
+                  <li>AAVE: $95.42</li>
+                  <li>THETA: $2.05</li>
+                  <li>EOS: $0.87</li>
+                  <li>XTZ: $1.28</li>
+                  <li>AXS: $8.45</li>
+                  <li>SAND: $0.47</li>
+                  <li>MANA: $0.52</li>
+                  <li>CHZ: $0.13</li>
+                  <li>ENJ: $0.36</li>
+                  <li>YFI: $7,435.00</li>
+                  <li>ZIL: $0.03</li>
+                  <li>1INCH: $0.48</li>
+                  <li>COMP: $60.25</li>
+                  <li>DYDX: $1.95</li>
+                  <li>BAT: $0.23</li>
+                  <li>CELO: $0.84</li>
+                  <li>GALA: $0.045</li>
+                  <li>ILV: $94.80</li>
+                  <li>SRM: $0.04</li>
+                  <li>RVN: $0.023</li>
+                  <li>KSM: $28.10</li>
+                  <li>OMG: $0.55</li>
+                  <li>ZEN: $10.15</li>
+                  <li>API3: $3.10</li>
+                  <li>OCEAN: $0.62</li>
+                  <li>SKL: $0.08</li>
+                  <li>BAND: $1.55</li>
+                  <li>CTSI: $0.22</li>
+                  <li>GLM: $0.36</li>
+                  <li>CKB: $0.016</li>
+                  <li>ALPHA: $0.14</li>
+                  <li>JOE: $0.61</li>
+                  <li>XYO: $0.009</li>
+                  <li>REN: $0.048</li>
+                  <li>REEF: $0.0018</li>
+                  <li>STRAX: $1.15</li>
+                  <li>BICO: $0.42</li>
+                </ul>
+              </div>
+            
+              <!-- Trading Table/Grid -->
+              <div class="trading-data">
+                <div class="crypto-card">
+                  <div class="crypto-header">
+                    <h3>Bitcoin (BTC)</h3>
+                    <span class="price">$67,204.38</span>
+                  </div>
+                  <p>Market Cap: <span class="positive">+2.45%</span></p>
+                  <button class="trade-btn" onclick="window.location.href='login.ejs'">Trade Now</button>
+                </div>
+            
+                <div class="crypto-card">
+                  <div class="crypto-header">
+                    <h3>Ethereum (ETH)</h3>
+                    <span class="price">$3,528.91</span>
+                  </div>
+                  <p>Market Cap: <span class="negative">-1.12%</span></p>
+                  <button class="trade-btn" onclick="window.location.href='login.ejs'">Trade Now</button>
+                </div>
+            
+                <div class="crypto-card">
+                  <div class="crypto-header">
+                    <h3>Litecoin (LTC)</h3>
+                    <span class="price">$88.27</span>
+                  </div>
+                  <p>Market Cap: <span class="positive">+0.89%</span></p>
+                  <button class="trade-btn" onclick="window.location.href='login.ejs'">Trade Now</button>
+                </div>
+            
+                <div class="crypto-card">
+                  <div class="crypto-header">
+                    <h3>Ripple (XRP)</h3>
+                    <span class="price">$0.56</span>
+                  </div>
+                  <p>Market Cap: <span class="negative">-0.45%</span></p>
+                  <button class="trade-btn" onclick="window.location.href='login.ejs'">Trade Now</button>
+            
+            
+                </div>
+                <div class="crypto-card">
+                  <div class="crypto-header">
+                    <h3>Cardano (ADA)</h3>
+                    <span class="price">$0.43</span>
+                  </div>
+                  <p>Market Cap: <span class="positive">+1.02%</span></p>
+                  <button class="trade-btn" onclick="window.location.href='login.ejs'">Trade Now</button>
+                </div>
+                
+                <!-- More card -->
+                <a href="#" class="crypto-card more-card">
+                  <div class="crypto-header">
+                    <h3 class="more">See More</h3>
+                  </div>
+                  <p>Explore live charts and more cryptocurrencies.</p>
+                  <button class="trade-btn">View Graphs ></button>
+                </a>
+              </div>
+            </section>
+          </main>
+        <script src="/test1/script.js" defer ></script>
+    </body>
+</html>
